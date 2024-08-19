@@ -99,10 +99,7 @@ function CanvasGame() {
         <div
           className="game-container"
           style={{
-            position: "relative",
-            width: "500px",
-            height: "500px",
-            border: "1px solid black",
+            
           }}
         >
           {points.map((point) => (
