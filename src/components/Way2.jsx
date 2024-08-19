@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useTimer from "../hooks/useTimer";
 
 function CanvasGame() {
-  const [numPoints, setNumPoints] = useState(""); 
+  const [numPoints, setNumPoints] = useState("");
   const [points, setPoints] = useState([]);
   const [nextValue, setNextValue] = useState(1);
   const [message, setMessage] = useState("");
@@ -10,10 +10,8 @@ function CanvasGame() {
   const { timer, handleStart, handleReset, handlePause } = useTimer();
 
   const handleChange = (e) => {
-    setNumPoints(Number(e.target.value) || ""); 
-    setNextValue(1);
+    setNumPoints(Number(e.target.value) || "");
     setMessage("");
-    setGameStarted(false);
   };
 
   const startGame = () => {
@@ -27,11 +25,9 @@ function CanvasGame() {
 
   const generateRandomPoints = () => {
     const newPoints = [];
-    const margin = 0;
-
     for (let i = 0; i < numPoints; i++) {
-      const x = Math.floor(Math.random() * 92) + margin;
-      const y = Math.floor(Math.random() * 92) + margin;
+      const x = Math.floor(Math.random() * 92);
+      const y = Math.floor(Math.random() * 92);
       newPoints.push({ x, y, value: i + 1, clicked: false });
     }
     newPoints.sort((a, b) => b.value - a.value);
@@ -96,12 +92,7 @@ function CanvasGame() {
         </div>
         <div>Time: {timer}s</div>
         <button onClick={startGame}>{gameStarted ? "Restart" : "Start"}</button>
-        <div
-          className="game-container"
-          style={{
-            
-          }}
-        >
+        <div className="game-container" style={{}}>
           {points.map((point) => (
             <div
               key={point.value}

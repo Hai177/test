@@ -1,5 +1,4 @@
 import "./App.css";
-
 import Way2 from "./components/Way2";
 
 function App() {

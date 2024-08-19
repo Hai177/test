@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import useTimer from "../hooks/useTimer";
 
-const RandomNumberGame=()=> {
+const RandomNumberGame = () => {
   const canvasRef = useRef(null);
   const [numPoints, setNumPoints] = useState(0);
   const [points, setPoints] = useState([]);
@@ -12,9 +12,7 @@ const RandomNumberGame=()=> {
 
   const handleChange = (e) => {
     setNumPoints(Number(e.target.value));
-    setNextValue(1);
     setMessage("");
-    setGameStarted(false);
   };
 
   const startGame = () => {
@@ -33,7 +31,6 @@ const RandomNumberGame=()=> {
     const height = canvas.height;
     const margin = 20;
     context.clearRect(0, 0, width, height);
-
     const newPoints = [];
     for (let i = 0; i < numPoints; i++) {
       const x = Math.floor(Math.random() * (width - 2 * margin)) + margin;
@@ -129,6 +126,6 @@ const RandomNumberGame=()=> {
       </div>
     </div>
   );
-}
+};
 
 export default RandomNumberGame;
