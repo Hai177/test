@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useTimer from "../hooks/useTimer";
 
 function CanvasGame() {
-  const [numPoints, setNumPoints] = useState(0);
+  const [numPoints, setNumPoints] = useState(""); 
   const [points, setPoints] = useState([]);
   const [nextValue, setNextValue] = useState(1);
   const [message, setMessage] = useState("");
@@ -10,7 +10,7 @@ function CanvasGame() {
   const { timer, handleStart, handleReset, handlePause } = useTimer();
 
   const handleChange = (e) => {
-    setNumPoints(Number(e.target.value));
+    setNumPoints(Number(e.target.value) || ""); 
     setNextValue(1);
     setMessage("");
     setGameStarted(false);
@@ -27,7 +27,6 @@ function CanvasGame() {
 
   const generateRandomPoints = () => {
     const newPoints = [];
-
     const margin = 0;
 
     for (let i = 0; i < numPoints; i++) {
