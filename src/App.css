@@ -75,9 +75,3 @@
   color: red
 }
 
-@keyframes fade {
-
-  to {
-    background-color: red;
-  }
-}
